@@ -1,5 +1,6 @@
 ## KeySensei
 > learn touch typing, limited lessons, select target speed and weakpoints
+- check it out at https://key-sensei-five.vercel.app/homepage.html
 ## Showcase
 - [ ] Add images
 ## Future Roadmap
