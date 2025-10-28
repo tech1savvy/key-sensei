@@ -1,0 +1,40 @@
+.key {
+  /* Box Model */
+  border: 1px solid #2c2c2c;
+  border-radius: 0.5em;
+  height: 2.4em;
+  margin: 0.3em;
+  width: 2.8em;
+
+  /* Typography */
+  color: #e0e0e0;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  line-height: 2.4em;
+  text-align: center;
+
+  /* Visuals */
+  background-color: #1e1e1e;
+  box-shadow:
+    0px -4px 8px rgba(0, 0, 0, 0.2),
+    0px 4px 10px rgba(0, 0, 0, 0.3);
+
+  /* Animation */
+  transition:
+    transform 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  /* Misc */
+  cursor: pointer;
+}
+
+.pressed {
+  background-color: #157347;
+  transform: translateY(2px);
+  box-shadow: 0px 0px 5px rgba(0, 188, 212, 0.5);
+}
+
+.spacebar {
+  width: 20em;
+}
