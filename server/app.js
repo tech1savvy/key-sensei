@@ -1,14 +1,19 @@
 const express = require("express");
-const userRoutes = require("./features/user/user.routes");
+const cookieParser = require("cookie-parser");
+const { authRoutes } = require("./features/auth/auth.routes");
+const { protect, optionalProtect } = require("./features/auth/auth.middleware");
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
-app.get("/api", (req, res) => {
-  return res.send("Key-Sensie API");
+// TODO: Add CROS
+
+app.get("/api", optionalProtect, (_, res) => {
+	res.json("hello from key-sensie!");
 });
 
-app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
 
 module.exports = app;
