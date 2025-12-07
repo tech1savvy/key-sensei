@@ -8,23 +8,22 @@
 
 ### Core Features
 
-- [-] Implement logic for saving typing test results.
-  - [ ] In `features/typingTest/typingTest.controller.js`, update `handleSetTypingTestResult` to:
-    - [ ] Extract `wpm` and `accuracy` from `req.body`.
-    - [ ] Get the authenticated user's ID from the JWT token (this will require auth middleware).
-    - [ ] Create a new `TypingTest` document with the data and save it to the database.
-- [ ] Implement logic for retrieving a user's historical test results.
-  - [ ] In `features/typingTest/typingTest.controller.js`, update `handleGetTypingTestResult` to:
-    - [ ] Get the authenticated user's ID from the JWT token.
-    - [ ] Find all `TypingTest` documents associated with the user ID.
-    - [ ] Return the results as a JSON response.
-- [ ] Implement authentication middleware to protect routes.
-  - [ ] Create a middleware in `features/auth/auth.middleware.js` that:
-    - [ ] Verifies the JWT token from the request cookies.
-    - [ ] Attaches the user payload to the request object (`req.user`).
-  - [ ] Apply the middleware to the `typingTestRoutes` in `features/typingTest/typingTest.routes.js`.
+- [x] Implement logic for saving typing test results.
+  - [x] In `features/typingTest/typingTest.controller.js`, update `handleSetTypingTestResult` to:
+    - [x] Extract `wpm` and `accuracy` from `req.body`.
+    - [x] Get the authenticated user's ID from the JWT token (this will require auth middleware).
+    - [x] Create a new `TypingTest` document with the data and save it to the database.
+- [x] Implement logic for retrieving a user's historical test results.
+  - [x] In `features/typingTest/typingTest.controller.js`, update `handleGetTypingTestResult` to:
+    - [x] Get the authenticated user's ID from the JWT token.
+    - [x] Find all `TypingTest` documents associated with the user ID.
+    - [x] Return the results as a JSON response.
+- [x] Implement authentication middleware to protect routes.
+  - [x] Create a middleware in `features/auth/auth.middleware.js` that:
+    - [x] Verifies the JWT token from the request cookies.
+    - [x] Attaches the user payload to the request object (`req.user`).
+  - [x] Apply the middleware to the `typingTestRoutes` in `features/typingTest/typingTest.routes.js`.
 
 ### Refactoring & Improvements
 
 - [ ] Refactor `handleSignup` in `features/auth/auth.controller.js` to handle potential errors (e.g., duplicate email).
-
