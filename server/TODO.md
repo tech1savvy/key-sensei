@@ -2,13 +2,13 @@
 
 - [x] Implement user registration controller logic, including password hashing.
 - [x] Implement user login controller logic, including password verification and session/token management (e.g., JWT).
-- [ ] Implement logout functionality by clearing the JWT cookie.
-  - [ ] Create `handleLogout` controller in `features/auth/auth.controller.js`.
-  - [ ] Add a `/logout` route in `features/auth/auth.routes.js`.
+- [x] Implement logout functionality by clearing the JWT cookie.
+  - [x] Create `handleLogout` controller in `features/auth/auth.controller.js`.
+  - [x] Add a `/logout` route in `features/auth/auth.routes.js`.
 
 ### Core Features
 
-- [ ] Implement logic for saving typing test results.
+- [-] Implement logic for saving typing test results.
   - [ ] In `features/typingTest/typingTest.controller.js`, update `handleSetTypingTestResult` to:
     - [ ] Extract `wpm` and `accuracy` from `req.body`.
     - [ ] Get the authenticated user's ID from the JWT token (this will require auth middleware).
@@ -27,4 +27,4 @@
 ### Refactoring & Improvements
 
 - [ ] Refactor `handleSignup` in `features/auth/auth.controller.js` to handle potential errors (e.g., duplicate email).
-- [ ] Refactor `handleLogin` in `features/auth/auth.controller.js` to return a more specific error message for invalid credentials.
+
