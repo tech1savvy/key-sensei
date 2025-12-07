@@ -5,7 +5,7 @@ async function seedUser() {
 		const dummyUser = new User({
 			fullname: "Example User",
 			email: "example@mail.com",
-			password: "asdfjkl;",
+			password: "asdf;lkj",
 		});
 
 		await dummyUser.save();
