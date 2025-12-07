@@ -1,0 +1,18 @@
+meta {
+  name: set
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseURL}}/api/typing-test/results
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "wpm": "40",
+    "accurracy": "80"
+  }
+}
