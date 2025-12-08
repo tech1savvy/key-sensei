@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageNotFound from "./components/Pages/PageNotFound.jsx";
 
 const router = createBrowserRouter([
-  { path: "/", element: <App data-bs-theme="dark" /> },
+  { path: "/", element: <App /> },
   { path: "*", element: <PageNotFound /> },
 ]);
 
