@@ -2,11 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- TODO: Add more visible Favicon-->
+
+    <!-- TODO: Add Favicon with better visibility -->
+    <!-- FIX: Vite informs in logs: to use /favicon.ico but It does not work-->
+    <!-- "Files in the public directory are served at the root path." -->
+    <!-- "Instead of /public/favicon.ico, use /favicon.ico." -->
+
     <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KeySensei</title>
   </head>
+  <!-- Bootstrap Dark Theme Enabled as Default-->
   <body data-bs-theme="dark">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
