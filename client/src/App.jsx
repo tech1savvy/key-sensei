@@ -7,11 +7,11 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Navbar from "./components/Navbar";
-import Menubar from "./components/Typing/Menubar";
-import Typer from "./components/Typing/Typer";
-import Keyboard from "./components/Typing/Keyboard/Keyboard.jsx";
+import Menubar from "./components/Typer/Menubar";
+import Typer from "./components/Typer/Typer";
+import Keyboard from "./components/Typer/Keyboard/Keyboard.jsx";
 import Footer from "./components/Footer";
-import Result from "./components/Typing/Result";
+import Result from "./components/Typer/Result";
 
 import { TypingTestPreferenceProvider } from "./contexts/TypingTestPreferenceProvider.jsx";
 
