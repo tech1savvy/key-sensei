@@ -15,6 +15,7 @@ function Menubar() {
     <>
       <div className="container text-center p-1 border border-3 border-light-subtle rounded-pill">
         <div className="row">
+          {/* Time Limit Menu */}
           <div className="col border-end">
             <i className="bi bi-stopwatch p-1"></i>
             {[15, 30, 60].map((time) => (
@@ -28,6 +29,8 @@ function Menubar() {
               </span>
             ))}
           </div>
+
+          {/* Word Limit Menu */}
           <div className="col">
             <i className="bi bi-alphabet p-1"> </i>
             {[25, 50, 100].map((word) => (
