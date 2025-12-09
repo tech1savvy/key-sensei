@@ -13,25 +13,29 @@ import Keyboard from "./components/Typing/Keyboard/Keyboard.jsx";
 import Footer from "./components/Footer";
 import Result from "./components/Typing/Result";
 
+import { TypingTestPreferenceProvider } from "./contexts/TypingTestPreferenceProvider.jsx";
+
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="container">
-        <div className="row pt-3">
-          <Menubar />
+      <TypingTestPreferenceProvider>
+        <Navbar />
+        <div className="container">
+          <div className="row pt-3">
+            <Menubar />
+          </div>
+          <div className="row p-3">
+            <Typer />
+          </div>
+          <div className="row p-3">
+            <Result />
+          </div>
+          <div className="row p-3">
+            <Keyboard />
+          </div>
         </div>
-        <div className="row p-3">
-          <Typer />
-        </div>
-        <div className="row p-3">
-          <Result />
-        </div>
-        <div className="row p-3">
-          <Keyboard />
-        </div>
-      </div>
-      <Footer />
+        <Footer />
+      </TypingTestPreferenceProvider>
     </>
   );
 }

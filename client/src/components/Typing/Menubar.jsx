@@ -1,16 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import TypingTestPreferenceContext from "../../contexts/TypingTestPreferenceContext";
 
 function Menubar() {
-  const [wordLimit, setWordLimit] = useState(50);
-  const [timeLimit, setTimeLimit] = useState(15);
-
-  const handleTimeLimitChange = (value) => {
-    setTimeLimit(value);
-  };
-  const handleWordLimitChange = (value) => {
-    setWordLimit(value);
-  };
-
+  const { timeLimit, wordLimit, handleTimeLimitChange, handleWordLimitChange } =
+    useContext(TypingTestPreferenceContext);
   return (
     <>
       <div className="container text-center p-1 border border-3 border-light-subtle rounded-pill">
