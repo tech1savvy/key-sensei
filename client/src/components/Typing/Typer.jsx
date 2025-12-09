@@ -1,14 +1,8 @@
 import { useContext } from "react";
 import TypingTestPreferenceContext from "../../contexts/TypingTestPreferenceContext";
 
-function Word({ word }) {
-  return (
-    <span className="p-1" style={{ display: "inline-block" }}>
-      {word}
-    </span>
-  );
-}
 import dictionary from "./Typer.data";
+import Word from "./Word";
 
 function Typer() {
   const { timeLimit, wordLimit } = useContext(TypingTestPreferenceContext);
