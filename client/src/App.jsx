@@ -14,27 +14,30 @@ import Footer from "./components/Footer";
 import Result from "./components/Typer/Result";
 
 import { TypingTestPreferenceProvider } from "./contexts/TypingTestPreferenceProvider.jsx";
+import { KeyPressProvider } from "./contexts/KeyPressProvider.jsx";
 
 function App() {
   return (
     <>
       <TypingTestPreferenceProvider>
-        <Navbar />
-        <div className="container">
-          <div className="row pt-3">
-            <Menubar />
+        <KeyPressProvider>
+          <Navbar />
+          <div className="container">
+            <div className="row pt-3">
+              <Menubar />
+            </div>
+            <div className="row p-3">
+              <Typer />
+            </div>
+            <div className="row p-3">
+              <Result />
+            </div>
+            <div className="row p-3">
+              <Keyboard />
+            </div>
           </div>
-          <div className="row p-3">
-            <Typer />
-          </div>
-          <div className="row p-3">
-            <Result />
-          </div>
-          <div className="row p-3">
-            <Keyboard />
-          </div>
-        </div>
-        <Footer />
+          <Footer />
+        </KeyPressProvider>
       </TypingTestPreferenceProvider>
     </>
   );
