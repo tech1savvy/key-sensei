@@ -60,5 +60,5 @@ export const keyboardLayout = [
     { code: "Slash", value: "/" },
     { code: "ShiftRight", value: "", className: "bg-body-secondary" },
   ],
-  [{ code: "Space", value: "", className: "spacebar" }],
+  [{ code: "Space", value: "", className: "w-50" }],
 ];
