@@ -8,7 +8,7 @@ function Result() {
   const handleNewTest = () => {};
 
   return (
-    <div class="container p-2 shadow-lg bg-body-tertiary rounded">
+    <div className="container p-2 shadow-lg bg-body-tertiary rounded">
       <div className="row">
         {/* Speed result */}
         <div className="col">

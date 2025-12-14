@@ -1,0 +1,21 @@
+.cursor {
+  position: absolute; /* Allows precise top/left positioning */
+  width: 2px; /* Cursor thickness */
+  height: 1.5em; /* Cursor height, adjust to match your font size */
+  background-color: #0d6efd; /* A visible color, e.g., Bootstrap blue */
+  animation: blink 1s infinite; /* Blinking animation */
+  transition:
+    top 0.1s ease-in-out,
+    left 0.1s ease-in-out; /* Smooth movement */
+  z-index: 10; /* Ensure cursor is above text */
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  } /* Fully visible */
+  50% {
+    opacity: 0;
+  } /* Hidden */
+}

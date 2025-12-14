@@ -1,0 +1,6 @@
+.wordsContainer {
+  position: relative; /* Essential for positioning the absolute cursor within it */
+  line-height: 2em; /* Provides vertical spacing for lines of words */
+  font-size: 1.2em; /* Adjust if your base text size is different */
+  /* You might also want to add padding or margins here */
+}

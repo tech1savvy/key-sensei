@@ -1,0 +1,27 @@
+.letter {
+  /* Base styling for each letter */
+  transition: color 0.15s ease-in-out;
+  border-radius: 2px;
+}
+
+.pending {
+  /* Style for letters not yet typed */
+  color: #6c757d; /* A neutral gray color, good for dark themes */
+}
+
+.correct {
+  /* A light gray/off-white for correctly typed letters */
+  color: #d1d5db;
+}
+
+.incorrect {
+  /* A Bootstrap-like danger red */
+  color: #dc3545;
+}
+
+.current {
+  /* Underline to indicate the current letter */
+  text-decoration: underline;
+  text-decoration-color: #0d6efd; /* A Bootstrap-like blue */
+  text-decoration-thickness: 2px;
+}
