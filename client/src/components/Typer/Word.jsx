@@ -1,12 +1,7 @@
 import Letter from "./Letter";
 
-function Word({
-  wordObj,
-  isCurrentWord,
-  currentWordIndex,
-  currentLetterIndex,
-}) {
-  const { word, letters } = wordObj;
+function Word({ wordObj, isCurrentWord, currentLetterIndex }) {
+  const { letters } = wordObj;
 
   const classNames = ["word"];
   if (isCurrentWord) {
@@ -20,6 +15,7 @@ function Word({
       {letters.map((letterObj, letterIndex) => (
         <Letter
           key={letterIndex}
+          id={letterIndex}
           char={letterObj.char}
           status={letterObj.status}
           isCurrentLetter={isCurrentWord && letterIndex === currentLetterIndex}

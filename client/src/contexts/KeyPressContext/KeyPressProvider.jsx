@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import KeyPressContext from "./KeyPressContext";
 
-export function KeyPressProvider({ children }) {
+function KeyPressProvider({ children }) {
   // Store pressed keys
   const [pressedKeys, setPressedKeys] = useState(new Set());
 
@@ -79,3 +79,5 @@ export function KeyPressProvider({ children }) {
     </KeyPressContext.Provider>
   );
 }
+
+export default KeyPressProvider;

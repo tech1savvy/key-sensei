@@ -1,5 +1,5 @@
 import { useContext, useCallback, useEffect } from "react";
-import KeyPressContext from "../../contexts/KeyPressContext";
+import KeyPressContext from "../../KeyPressContext/KeyPressContext";
 
 function useKeyHandler(status, dispatch) {
   const { subscribe, unsubscribe } = useContext(KeyPressContext);
@@ -16,7 +16,7 @@ function useKeyHandler(status, dispatch) {
 
       if (isLetter) dispatch({ type: "TYPE_LETTER", payload: { key } });
       if (isSpace) dispatch({ type: "NEXT_WORD" });
-      if (isBackspace) dispatch({ type: "BACKSPACE" });
+      if (isBackspace) dispatch({ type: "CLEAR_LETTER" });
     },
     [status, dispatch],
   );

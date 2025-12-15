@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import TypingTestPreferenceContext from "../../contexts/TypingTestPreferenceContext";
+import TypingTestContext from "../../contexts/TypingTest/TypingTestContext";
 
 function Menubar() {
   const { timeLimit, wordLimit, handleTimeLimitChange, handleWordLimitChange } =
-    useContext(TypingTestPreferenceContext);
+    useContext(TypingTestContext);
   return (
     <>
       <div className="container text-center p-1 border border-3 border-light-subtle rounded-pill">

@@ -1,7 +1,7 @@
-import dictionary from "./Typer.data";
-import generateWordList from "./Typer.generateWordList";
+import dictionary from "./data";
+import generateWordList from "./utils/generateWordList";
 
-export const initialState = {
+export const typingTestInitialState = {
   status: "ready", // 'ready', 'running', 'finished'
   wordList: [],
   currentWordIndex: 0,
@@ -10,13 +10,13 @@ export const initialState = {
   stats: { wpm: 0, accuracy: 0 },
 };
 
-export function reducer(state, action) {
+export function typingTestReducer(state, action) {
   switch (action.type) {
     case "RESET": {
       const { wordLimit, timeLimit } = action.payload;
       const words = generateWordList(wordLimit, dictionary);
       return {
-        ...initialState,
+        ...typingTestInitialState,
         wordList: words.map((word) => ({
           word,
           letters: word.split("").map((char) => ({ char, status: "pending" })),
@@ -79,8 +79,7 @@ export function reducer(state, action) {
       };
     }
 
-    // TODO: Rename to CLEAR_LETTER
-    case "BACKSPACE": {
+    case "CLEAR_LETTER": {
       if (state.status !== "running") return state;
 
       const currentWord = state.wordList[state.currentWordIndex];

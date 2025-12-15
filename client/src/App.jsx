@@ -13,32 +13,32 @@ import Keyboard from "./components/Typer/Keyboard/Keyboard.jsx";
 import Footer from "./components/Footer";
 import Result from "./components/Typer/Result";
 
-import { TypingTestPreferenceProvider } from "./contexts/TypingTestPreferenceProvider.jsx";
-import { KeyPressProvider } from "./contexts/KeyPressProvider.jsx";
+import KeyPressProvider from "./contexts/KeyPressContext/KeyPressProvider.jsx";
+import TypingTestProvider from "./contexts/TypingTest/TypingTestProvider.jsx";
 
 function App() {
   return (
     <>
-      <TypingTestPreferenceProvider>
-        <KeyPressProvider>
+      <KeyPressProvider>
+        <TypingTestProvider>
           <Navbar />
           <div className="container">
             <div className="row pt-3">
               <Menubar />
             </div>
-            <div className="row p-3">
+            <div className="row p-1">
               <Typer />
             </div>
             <div className="row p-3">
               <Result />
             </div>
-            <div className="row p-3">
+            <div className="row p-1">
               <Keyboard />
             </div>
           </div>
           <Footer />
-        </KeyPressProvider>
-      </TypingTestPreferenceProvider>
+        </TypingTestProvider>
+      </KeyPressProvider>
     </>
   );
 }

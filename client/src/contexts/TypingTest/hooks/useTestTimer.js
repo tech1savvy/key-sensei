@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useGameTimer(status, dispatch) {
+function useTestTimer(status, dispatch) {
   useEffect(() => {
     let timerId;
     if (status === "running") {
@@ -14,3 +14,5 @@ export default function useGameTimer(status, dispatch) {
     };
   }, [status, dispatch]);
 }
+
+export default useTestTimer;

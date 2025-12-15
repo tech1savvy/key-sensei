@@ -1,6 +1,6 @@
 import { memo, useContext } from "react";
 import styles from "./Key.module.css";
-import KeyPressContext from "../../../contexts/KeyPressContext";
+import KeyPressContext from "../../../contexts/KeyPressContext/KeyPressContext";
 
 const Key = memo(({ id, value, keyClassName }) => {
   const { pressedKeys } = useContext(KeyPressContext);

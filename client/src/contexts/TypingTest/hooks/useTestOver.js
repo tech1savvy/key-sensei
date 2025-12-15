@@ -1,13 +1,7 @@
 import { useEffect } from "react";
-import { calculateStats } from "./calculateStats";
+import { calculateStats } from "../utils/calculateStats";
 
-export default function (
-  status,
-  wordList,
-  currentWordIndex,
-  timeLimit,
-  dispatch,
-) {
+function useTestOver(status, wordList, currentWordIndex, timeLimit, dispatch) {
   useEffect(() => {
     if (status === "finished") {
       const stats = calculateStats(
@@ -40,3 +34,5 @@ export default function (
     }
   }, [status, wordList, currentWordIndex, timeLimit, dispatch]);
 }
+
+export default useTestOver;

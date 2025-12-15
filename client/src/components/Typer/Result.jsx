@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext } from "react";
+import TypingTestContext from "../../contexts/TypingTest/TypingTestContext";
 
 function Result() {
-  const [speed, setSpeed] = useState(0);
-  const [accuracy, setAccuracy] = useState(0);
+  const { stats, wordLimit, timeLimit, dispatch } =
+    useContext(TypingTestContext);
+  const { wpm, accuracy } = stats;
 
-  // TODO: Implement New Test handler
-  const handleNewTest = () => {};
+  const handleNewTest = () => {
+    dispatch({ type: "RESET", payload: { wordLimit, timeLimit } });
+  };
 
   return (
     <div className="container p-2 shadow-lg bg-body-tertiary rounded">
@@ -13,7 +16,7 @@ function Result() {
         {/* Speed result */}
         <div className="col">
           <div className="btn btn-outline-secondary">
-            WPM: <span className="text-success">{speed}</span>
+            WPM: <span className="text-success">{wpm}</span>
           </div>
         </div>
         {/* Accuracy result */}
