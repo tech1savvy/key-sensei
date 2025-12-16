@@ -1,5 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const { protect, optionalProtect } = require("./features/auth/auth.middleware");
 const { authRoutes } = require("./features/auth/auth.routes");
 const {
@@ -11,7 +12,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// TODO: Add CROS
+// TODO: Test CROS
+app.use(
+	cors({
+		origin: "http//localhost:5173",
+		credentials: true,
+	}),
+);
 
 app.get("/api", optionalProtect, (_, res) => {
 	res.json("hello from key-sensie!");
