@@ -1,6 +1,9 @@
 import { Link } from "react-router";
+import { useAuth } from "../contexts/useAuth.jsx";
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+
   return (
     <nav className="bg-body-tertiary p-2">
       <div className="container">
@@ -10,12 +13,20 @@ const Navbar = () => {
             Key Sensei
           </Link>
           <div className="row col-2">
-            <Link to="/login" className="col nav-link">
-              Login
-            </Link>
-            <Link to="/register" className="col nav-link">
-              Register
-            </Link>
+            {user ? (
+              <button type="button" onClick={logout} className="col nav-link btn btn-link">
+                Logout
+              </button>
+            ) : (
+              <>
+                <Link to="/login" className="col nav-link">
+                  Login
+                </Link>
+                <Link to="/register" className="col nav-link">
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
