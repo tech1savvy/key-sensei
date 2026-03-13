@@ -6,8 +6,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const hasCookie = document.cookie.includes("jwt");
-    if (hasCookie) {
-      setUser({ isAuthenticated: true });
+    const storedUser = localStorage.getItem("user");
+    if (hasCookie && storedUser) {
+      setUser(JSON.parse(storedUser));
     }
   }, []);
 
@@ -22,7 +23,8 @@ export const AuthProvider = ({ children }) => {
     if (!res.ok) {
       throw new Error(data.error || "Login failed");
     }
-    setUser({ isAuthenticated: true });
+    localStorage.setItem("user", JSON.stringify(data.user));
+    setUser(data.user);
     return data;
   };
 
@@ -45,6 +47,7 @@ export const AuthProvider = ({ children }) => {
       method: "POST",
       credentials: "include",
     });
+    localStorage.removeItem("user");
     setUser(null);
   };
 

@@ -33,7 +33,10 @@ const handleLogin = async (req, res) => {
 	// Set jwt cookie
 	const token = setUser(user);
 	res.cookie("jwt", token);
-	return res.status(200).json({ message: "User logged-in successfully" });
+	return res.status(200).json({ 
+		message: "User logged-in successfully",
+		user: { id: user._id, username: user.username, email: user.email }
+	});
 };
 
 // TODO: Add error handling & validation
