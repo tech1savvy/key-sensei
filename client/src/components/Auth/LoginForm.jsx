@@ -3,7 +3,7 @@ import FormInput from "./FormInput";
 import useLoginForm from "./hooks/useLoginForm";
 
 const LoginForm = () => {
-  const { email, setEmail, password, setPassword, handleSubmit } =
+  const { email, setEmail, password, setPassword, handleSubmit, error, loading } =
     useLoginForm();
 
   return (
@@ -11,6 +11,11 @@ const LoginForm = () => {
       <div className="d-flex justify-content-center align-items-center min-vh-100">
         <div className="border p-3">
           <form className="" onSubmit={handleSubmit}>
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
             <div id="emailInput" className="p-3 mb-3">
               <FormInput
                 id="email"
@@ -37,13 +42,14 @@ const LoginForm = () => {
                 <input
                   className="btn btn-success"
                   type="submit"
-                  value="Login"
+                  value={loading ? "Logging in..." : "Login"}
+                  disabled={loading}
                 />
               </div>
             </div>
           </form>
           <div>
-            <Link to="/register">Don't have a account! Click here!</Link>
+            <Link to="/register">Don&apos;t have a account! Click here!</Link>
           </div>
         </div>
       </div>
