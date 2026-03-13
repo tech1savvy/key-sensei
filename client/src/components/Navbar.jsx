@@ -14,9 +14,12 @@ const Navbar = () => {
           </Link>
           <div className="row col-2">
             {user ? (
-              <button type="button" onClick={logout} className="col nav-link btn btn-link">
-                Logout
-              </button>
+              <>
+                <span className="col nav-link">{user.username}</span>
+                <button type="button" onClick={logout} className="col nav-link btn btn-link">
+                  Logout
+                </button>
+              </>
             ) : (
               <>
                 <Link to="/login" className="col nav-link">
