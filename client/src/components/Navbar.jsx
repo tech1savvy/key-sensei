@@ -12,20 +12,35 @@ const Navbar = () => {
             <i className="bi bi-keyboard p-1"></i>
             Key Sensei
           </Link>
-          <div className="row col-2">
+          <div className="col-2 d-flex justify-content-end">
             {user ? (
-              <>
-                <span className="col nav-link">{user.username}</span>
-                <button type="button" onClick={logout} className="col nav-link btn btn-link">
-                  Logout
+              <div className="dropdown">
+                <button
+                  type="button"
+                  className="btn btn-link nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  <i className="bi bi-person"></i> {user.username}
                 </button>
-              </>
+                <ul className="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button
+                      type="button"
+                      className="dropdown-item text-danger"
+                      onClick={logout}
+                    >
+                      <i className="bi bi-box-arrow-right me-2"></i>
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
             ) : (
               <>
-                <Link to="/login" className="col nav-link">
+                <Link to="/login" className="nav-link">
                   Login
                 </Link>
-                <Link to="/register" className="col nav-link">
+                <Link to="/register" className="nav-link">
                   Register
                 </Link>
               </>
