@@ -24,6 +24,12 @@ const Navbar = () => {
                 </button>
                 <ul className="dropdown-menu dropdown-menu-end">
                   <li>
+                    <Link className="dropdown-item" to="/profile">
+                      <i className="bi bi-person me-2"></i>
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
                     <button
                       type="button"
                       className="dropdown-item text-danger"
