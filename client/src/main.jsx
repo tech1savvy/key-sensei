@@ -8,11 +8,13 @@ import { AuthProvider } from "./contexts/AuthProvider.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router";
 import PageNotFound from "./components/Pages/PageNotFound.jsx";
+import Profile from "./pages/Profile.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/login", element: <LoginForm /> },
   { path: "/register", element: <RegisterForm /> },
+  { path: "/profile", element: <Profile /> },
   { path: "*", element: <PageNotFound /> },
 ]);
 

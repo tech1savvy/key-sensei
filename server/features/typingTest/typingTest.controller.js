@@ -22,11 +22,19 @@ const handleSetTypingTestResult = async (req, res) => {
 // TODO: Implement pagination using limt and offset req.query
 const handleGetTypingTestResult = async (req, res) => {
 	try {
-		const results = await TypingTest.find(
-			{ user: req.user.id },
-			"wpm accuracy createdAt",
-		);
-		res.status(200).json({ results: results });
+		const page = parseInt(req.query.page) || 1;
+		const limit = parseInt(req.query.limit) || 10;
+		const skip = (page - 1) * limit;
+
+		const [results, total] = await Promise.all([
+			TypingTest.find({ user: req.user.id }, "wpm accuracy createdAt")
+				.sort({ createdAt: -1 })
+				.skip(skip)
+				.limit(limit),
+			TypingTest.countDocuments({ user: req.user.id }),
+		]);
+
+		res.status(200).json({ results, page, limit, total });
 	} catch (error) {
 		console.error(error);
 		res.status(500).json({ error: "Failed to fetech typing test results" });

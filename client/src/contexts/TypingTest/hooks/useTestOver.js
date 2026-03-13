@@ -13,8 +13,9 @@ function useTestOver(status, wordList, currentWordIndex, timeLimit, dispatch) {
       dispatch({ type: "SET_STATS", payload: { stats: stats } });
 
       // Save Stats
-      fetch("/api/scores", {
+      fetch("/api/typing-test/results", {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ wpm: stats.wpm, accuracy: stats.accuracy }),
       })
