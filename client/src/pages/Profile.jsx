@@ -41,13 +41,16 @@ const Profile = () => {
   const totalPages = Math.ceil(total / limit);
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
+    const utcDate = new Date(dateString);
+    return new Intl.DateTimeFormat("en-IN", {
+      timeZone: "Asia/Kolkata",
       year: "numeric",
       month: "short",
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-    });
+      hour12: true,
+    }).format(utcDate);
   };
 
   const handleLogout = () => {
