@@ -4,16 +4,16 @@ const { setUser } = require("./auth.service");
 // TODO: Add error handling & validation
 const handleRegister = async (req, res) => {
 	// Create user
-	const { name, email, password } = req.body;
+	const { username, email, password } = req.body;
 	const newUser = await User.create({
-		fullname: name,
-		email: email,
-		password: password,
+		username,
+		email,
+		password,
 	});
 
 	res.status(201).json({
 		message: "User created successfully",
-		user: { id: newUser._id, name: newUser.fullname, email: newUser.email },
+		user: { id: newUser._id, username: newUser.username, email: newUser.email },
 	});
 };
 

@@ -3,12 +3,9 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
 	{
-		name: {
-			firstname: {
-				type: String,
-				required: true,
-			},
-			lastname: String,
+		username: {
+			type: String,
+			required: true,
 		},
 		email: {
 			type: String,
@@ -21,20 +18,6 @@ const userSchema = new Schema(
 		},
 	},
 	{
-		virtuals: {
-			fullname: {
-				get() {
-					if (!this.name.lastname)
-						return `${this.name.firstname} ${this.name.lastname}`;
-					return this.name.firstname;
-				},
-				set(fullname) {
-					const [firstname, ...lastname] = fullname.split(" ");
-					this.name.firstname = firstname;
-					this.name.lastname = lastname.join(" ");
-				},
-			},
-		},
 		timestamps: true,
 	},
 );
