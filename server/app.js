@@ -13,12 +13,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // TODO: Test CROS
-	app.use(
-		cors({
-			origin: process.env.CLIENT_URL || "http://localhost:5173",
-			credentials: true,
-		}),
-	);
+app.use(
+	cors({
+		origin: process.env.CLIENT_URL || "http://localhost:5173",
+		credentials: true,
+	}),
+);
 
 app.get("/api", optionalProtect, (_, res) => {
 	res.json("hello from key-sensie!");

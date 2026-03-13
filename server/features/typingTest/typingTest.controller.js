@@ -22,8 +22,8 @@ const handleSetTypingTestResult = async (req, res) => {
 // TODO: Implement pagination using limt and offset req.query
 const handleGetTypingTestResult = async (req, res) => {
 	try {
-		const page = parseInt(req.query.page) || 1;
-		const limit = parseInt(req.query.limit) || 10;
+		const page = parseInt(req.query.page, 10) || 1;
+		const limit = parseInt(req.query.limit, 10) || 10;
 		const skip = (page - 1) * limit;
 
 		const [results, total] = await Promise.all([

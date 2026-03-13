@@ -1,10 +1,10 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "allowJs": true,
-    "checkJs": true,
-    "strict": true,
-  },
-  "exclude": ["node_modules"],
-  "include": ["**/*.js"]
+	"compilerOptions": {
+		"module": "commonjs",
+		"allowJs": true,
+		"checkJs": true,
+		"strict": true
+	},
+	"exclude": ["node_modules"],
+	"include": ["**/*.js"]
 }
