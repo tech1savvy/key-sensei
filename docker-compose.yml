@@ -4,3 +4,30 @@ services:
     container_name: key-sensei-mongodb
     ports:
       - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  server:
+    build:
+      context: ./server
+    container_name: key-sensei-server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    env_file:
+      - ./server/.env
+    restart: always
+
+  client:
+    build:
+      context: ./client
+    container_name: key-sensei-client
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    restart: always
+
+volumes:
+  mongodb_data:
