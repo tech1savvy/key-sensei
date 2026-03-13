@@ -36,14 +36,14 @@ const Navbar = () => {
                 </ul>
               </div>
             ) : (
-              <>
-                <Link to="/login" className="nav-link">
+              <div className="d-flex gap-2">
+                <Link to="/login" className="btn btn-success btn-sm">
                   Login
                 </Link>
-                <Link to="/register" className="nav-link">
+                <Link to="/register" className="btn btn-secondary btn-sm">
                   Register
                 </Link>
-              </>
+              </div>
             )}
           </div>
         </div>
