@@ -5,7 +5,7 @@ async function protect(req, res, next) {
 	const token = req.cookies?.jwt;
 	if (!token) return res.status(401).json({ error: "Authentication required" });
 	const user = getUser(token);
-	if (!user) return res.status.json({ error: "Invalid token" });
+	if (!user) return res.status(401).json({ error: "Invalid token" });
 	req.user = user;
 	next();
 }
