@@ -52,9 +52,11 @@ jobs:
           context: ./client
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/key-sensei-client:latest
+          platforms: linux/amd64,linux/arm64
       - name: Build and push server
         uses: docker/build-push-action@v7
         with:
           context: ./server
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/key-sensei-server:latest
+          platforms: linux/amd64,linux/arm64
